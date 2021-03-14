@@ -1,0 +1,38 @@
+package homework2;
+
+import java.util.Scanner;
+
+public class test2 {
+	public static void main(String[] arg) {
+		String choice = "yes";
+		do {
+			int randomNumber = 1 + (int) (Math.random() * 1000);
+			int yourNumber;
+			int chance = 9;
+			Scanner scan = new Scanner(System.in);
+			yourNumber = scan.nextInt();
+			while (yourNumber != randomNumber && chance != 0) {
+				if (yourNumber > randomNumber) {
+					System.out.println("too high");
+				}
+
+				else if (yourNumber < randomNumber) {
+					System.out.println("too low");
+				}
+				System.out.println("life:"+chance );
+				chance--;
+				yourNumber = scan.nextInt();
+
+			}
+			if (chance == 0 && yourNumber != randomNumber) {
+				System.out.println("you lose");
+				System.out.println("again?(yes or no)");
+				choice = scan.next();
+
+			} else {
+				System.out.println("you win");
+				System.out.println("again?(yes or no)");
+			}
+		} while (choice.equals("yes"));
+	}
+}
