@@ -1,0 +1,21 @@
+package homework3;
+
+import java.util.Scanner;
+
+public class test {
+public static void main(String[]a){
+	Scanner scan=new Scanner(System.in);
+	
+	System.out.println("输入水仙花数的位数");
+int N=scan.nextInt();
+for(double i=Math.pow(10, N-1);i<Math.pow(10, N);i++){
+	double a1=i,sum=0;
+	while(a1!=0){
+		sum=sum+Math.pow(a1%10, N);
+		a1=(int)(a1/10);
+	}if(sum==i){
+		System.out.println(i);
+	}
+}
+}
+}
